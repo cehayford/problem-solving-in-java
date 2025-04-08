@@ -66,7 +66,7 @@ public class task_manager {
                 default -> System.out.println("Invalid option. Please try again.");
             }
         }
-        System.out.println("Exiting Task Manager. Goodbye!");
+        System.out.println("Exiting dig-dug manager. Goodbye!");
     }
 
     private void createTask() {
