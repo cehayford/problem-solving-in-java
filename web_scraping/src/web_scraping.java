@@ -1,5 +1,6 @@
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -12,8 +13,16 @@ public class web_scraping {
         try {
             Document document = Jsoup.connect(url).get();
             String title = document.title();
+            Elements paragraphs = document.select("p");
+
+            System.out.println("--------------------------------------------------------------------------------");
             System.out.println("Title: " + title);
-        }catch(IOException e){
+            System.out.println("--------------------------------------------------------------------------------");
+            System.out.println("Article Content:");
+            for (int i = 0; i < paragraphs.size(); i++) {
+                System.out.println(paragraphs.get(i).text());
+            }
+        } catch (IOException e) {
             System.out.println("Invalid URL. Please restart the program and enter a valid URL.");
             e.printStackTrace();
         } finally {
