@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\YOGA\\Downloads\\jsoup-1.19.1.jar"
+    ]
+}
