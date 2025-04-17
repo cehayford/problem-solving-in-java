@@ -13,7 +13,6 @@ public class persistence {
         scanner = new Scanner(System.in);
     }
 
-    // Task class to represent a single task
     private static class Task {
         private String id;
         private String title;
@@ -45,7 +44,6 @@ public class persistence {
         }
     }
 
-    // Create a new task
     public void createTask() {
         System.out.print("Enter task ID: ");
         String id = scanner.nextLine();
@@ -60,7 +58,7 @@ public class persistence {
         System.out.println("Task created successfully!");
     }
 
-    // Read all tasks
+    // regernate all tasks
     public void readTasks() {
         if (tasks.isEmpty()) {
             System.out.println("No tasks found.");
@@ -73,7 +71,6 @@ public class persistence {
         }
     }
 
-    // Update a task
     public void updateTask() {
         System.out.print("Enter task ID to update: ");
         String id = scanner.nextLine();
@@ -106,7 +103,6 @@ public class persistence {
         System.out.println("Task updated successfully!");
     }
 
-    // Delete a task
     public void deleteTask() {
         System.out.print("Enter task ID to delete: ");
         String id = scanner.nextLine();
@@ -122,7 +118,6 @@ public class persistence {
         System.out.println("Task deleted successfully!");
     }
 
-    // Load tasks from file
     public void loadTasksFromFile() {
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
             String line;
@@ -143,7 +138,6 @@ public class persistence {
         }
     }
 
-    // Save tasks to file
     private void saveTasksToFile() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME))) {
             for (Task task : tasks) {
@@ -165,7 +159,7 @@ public class persistence {
         return null;
     }
 
-    // Main menu
+    // the engine of the program
     public void run() {
         loadTasksFromFile();
         
